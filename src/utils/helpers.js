@@ -5,13 +5,14 @@ export const formatDate = (dateString) => {
 };
 
 export const validateProductName = (name) => {
-  return name.length > 0 && name.length <= 100;
+  return name.length >= 3 && name.length <= 100;
 };
 
 export const validateQuantity = (quantity) => {
-  return Number.isInteger(quantity) && quantity > 0;
+  const num = parseInt(quantity);
+  return !isNaN(num) && num > 0;
 };
 
 export const validateCategory = (category) => {
-  return category.length > 0;
+  return category.length >= 2 && category.length <= 50;
 };

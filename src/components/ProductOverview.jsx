@@ -5,6 +5,7 @@ import { getProducts } from '../services/productService';
 
 const ProductOverview = () => {
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -15,17 +16,29 @@ const ProductOverview = () => {
     fetchProducts();
   }, []);
 
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-gray-800">Quản lý Sản phẩm</h1>
-        <Link
-          href="/products/create"
-        >
+        <div>
+          <input
+            type="text"
+            placeholder="Nhập tên sản phẩm cần tìm..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+      </div>
+      <div>
+        <Link href="/products/create">
           Thêm sản phẩm
         </Link>
       </div>
-      <ProductList products={products} />
+      <ProductList products={filteredProducts} />
     </div>
   );
 };
