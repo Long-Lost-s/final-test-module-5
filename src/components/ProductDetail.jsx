@@ -20,11 +20,11 @@ const ProductDetail = ({ id }) => {
   }
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>Category: {product.category.name}</p>
-      <p>Entry Date: {formatDate(product.entryDate)}</p>
-      <p>Quantity: {product.quantity}</p>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
+      <p className="mb-2">Category: {product.category.name}</p>
+      <p className="mb-2">Entry Date: {formatDate(product.entryDate)}</p>
+      <p className="mb-4">Quantity: {product.quantity}</p>
       <ProductUpdate product={product} />
     </div>
   );

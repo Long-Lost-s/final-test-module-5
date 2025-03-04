@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductList = ({ products }) => {
   return (
     <div>
-      <table>
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Name</th>

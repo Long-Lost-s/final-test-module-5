@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import ProductList from './ProductList';
 import { getProducts } from '../services/productService';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const ProductOverview = () => {
   const [products, setProducts] = useState([]);
