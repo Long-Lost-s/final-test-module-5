@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "T-Shirt",
+    "category": {
+      "id": 1,
+      "name": "Clothing"
+    },
+    "entryDate": "01/01/2023",
+    "quantity": 100
+  },
+  {
+    "id": 2,
+    "name": "Jeans",
+    "category": {
+      "id": 1,
+      "name": "Clothing"
+    },
+    "entryDate": "02/01/2023",
+    "quantity": 50
+  }
+]
